@@ -8,13 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogginComponent } from './core/loggin/loggin.component';
 import { FormsModule } from "@angular/forms";
 import { EmpresasComponent } from './core/empresas/empresas.component';
+import { NavComponent } from './core/nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LogginComponent,
-    EmpresasComponent
+    EmpresasComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
