@@ -12,19 +12,19 @@
                 <img src="assets/img/sing-in-alt-solid-1.svg" alt="">
                 <div class="login_row">
                     <i class="fas fa-envelope login_icon"></i>
-                    <input id="#{label}" class="login_input mail w-100" type="mail" required>
+                    <input id="#{label}" class="login_input mail w-100" type="mail" [(ngModel)]="user.email" name="email" required>
                     <label for="#{label}">Correo electonico</label>
                     <div class="bar"></div>
                 </div>
 
                 <div class="login_row">
                     <i class="fas fa-lock login_icon"></i>
-                    <input class="login_input pass w-100" type="password" required>
+                    <input class="login_input pass w-100" type="password" [(ngModel)]="user.password" name="password" required>
                     <label for="#{label}">Contraseña</label>
                     <div class="bar"></div>
                 </div>
 
-                <button class=" login_submit mt-3 w-100 rounded-3" type="button" name="">Ingresar</button>
+                <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" (click)="login()">Ingresar</button>
             </div>
         </div>
     </div>
