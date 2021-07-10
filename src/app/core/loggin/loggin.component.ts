@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogginComponent implements OnInit {
 
+  email:string = '';
+  contrasenna:string='';
+
   constructor() { }
 
   ngOnInit(): void {
