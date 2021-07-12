@@ -8,9 +8,50 @@ $Black: #000000
 $White: #FFFFFF
     
 *
-    box-sizing: content-box
+    box-sizing: border-box
+    padding: 0
+    color: $White
+    // background-color: $Background
 
-.nav
-    width: 100vw
-    height: 10vh
-    background-color: $Primay
+.header
+    background-color: $Primay  
+    .nav
+        margin: auto
+        width: 100vw
+        max-width: 1024px
+        height: 10vh
+        background-color: $Primay
+        padding: 10px 5px
+        // text-align: center
+        .imgNav
+            img
+                width: 160px
+        .containerNav
+            margin-right: auto
+            margin-left: auto
+            padding-top: 1rem
+            ul
+                li
+                    float: left
+                    margin-right:  30px
+                    list-style: none
+                    color: inherit
+                    a
+                        text-decoration: none
+        .iconUserNav
+            font-size: 2rem
+            // float: left
+            i
+                position: relative
+                right: 14px
+                bottom: 12px
+                margin-bottom: 0px
+                
+            .text
+                position: relative
+                font-size: 0.7rem
+                margin-top: -20px
+                right: 25px
+                // margin-right: 2px
+.body
+    background-color: $Background

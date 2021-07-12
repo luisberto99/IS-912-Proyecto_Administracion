@@ -9,6 +9,10 @@ import { LogginComponent } from './core/loggin/loggin.component';
 import { FormsModule } from "@angular/forms";
 import { EmpresasComponent } from './core/empresas/empresas.component';
 import { NavComponent } from './core/nav/nav.component';
+import { ProductosComponent } from './core/productos/productos.component';
+import { MotoristasComponent } from './core/motoristas/motoristas.component';
+import { OrdenesComponent } from './core/ordenes/ordenes.component';
+import { InfoAdminComponent } from './core/info-admin/info-admin.component';
 
 
 @NgModule({
@@ -16,7 +20,11 @@ import { NavComponent } from './core/nav/nav.component';
     AppComponent,
     LogginComponent,
     EmpresasComponent,
-    NavComponent
+    NavComponent,
+    ProductosComponent,
+    MotoristasComponent,
+    OrdenesComponent,
+    InfoAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,23 @@
-<div class="nav">
-    <h1>HOLA!!</h1>
-    <a routerLink="">Empresa</a>
-    <a routerLink="">Productos</a>
-    <a routerLink="">Motoristas</a>
-    <a routerLink="">aksdjakj</a>
+<header class="header">
+    <div class="nav">
+        <div class="imgNav">
+            <img src="assets/imgsLimaLimon/LimaLimonHeader.png" alt="">
+        </div>
+        <div class="containerNav">
+            <ul>
+                <li><a routerLink="empresas">Empresas</a></li>
+                <li><a routerLink="productos">Productos</a></li>
+                <li><a routerLink="motoristas">Motoristas</a></li>
+                <li><a routerLink="ordenes">Ordenes</a></li>
+            </ul>
+        </div>
+        <div class="iconUserNav">
+            <i class="fas fa-user-circle"></i>
+            <p class="text">Mi cuenta</p>
+        </div>
+    </div>
+</header>
+
+<div class="body">
+    <router-outlet></router-outlet>
 </div>
