@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  opcionSeleccionada:number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectOption(num:number){
+    this.opcionSeleccionada = num;
+  }
+  
 }

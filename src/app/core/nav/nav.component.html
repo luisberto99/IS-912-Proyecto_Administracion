@@ -5,10 +5,10 @@
         </div>
         <div class="containerNav">
             <ul>
-                <li><a routerLink="empresas">Empresas</a></li>
-                <li><a routerLink="productos">Productos</a></li>
-                <li><a routerLink="motoristas">Motoristas</a></li>
-                <li><a routerLink="ordenes">Ordenes</a></li>
+                <li [ngClass]="{li: opcionSeleccionada == 1}"><a routerLink="empresas"  (click) = "selectOption(1)">Empresas</a></li>
+                <li [ngClass]="{li: opcionSeleccionada == 2}"><a routerLink="productos" (click) = "selectOption(2)">Productos</a></li>
+                <li [ngClass]="{li: opcionSeleccionada == 3}"><a routerLink="motoristas"(click) = "selectOption(3)">Motoristas</a></li>
+                <li [ngClass]="{li: opcionSeleccionada == 4}"><a routerLink="ordenes"   (click) = "selectOption(4)">Ordenes</a></li>
             </ul>
         </div>
         <div class="iconUserNav">
