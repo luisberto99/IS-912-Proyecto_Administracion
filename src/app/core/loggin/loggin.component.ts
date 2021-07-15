@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-loggin',
   templateUrl: './loggin.component.html',
@@ -34,7 +35,6 @@ export class LogginComponent implements OnInit {
     console.log(this.user); */
     if(this.user.email == this.userValidate.email && this.userValidate.password == this.user.password){
       this.route.navigate(['/admin']);
-      console.log(this.user.email,this.user.password);
       this.stateSesion = true;
     }else{
       this.route.navigate(['/']);

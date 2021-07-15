@@ -8,7 +8,8 @@ import { ProductosComponent } from './core/productos/productos.component';
 import { InfoAdminComponent } from './core/info-admin/info-admin.component';
 import { MotoristasComponent } from './core/motoristas/motoristas.component';
 import { OrdenesComponent } from './core/ordenes/ordenes.component';
-// localhost:4200/welcome
+//localhost:4200/welcome
+
 const routes: Routes = [
   {path: "admin", component: NavComponent,
   children: [
