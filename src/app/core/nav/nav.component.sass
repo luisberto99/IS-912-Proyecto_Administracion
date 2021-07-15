@@ -1,0 +1,75 @@
+
+    
+/* Color Theme Swatches in Hex */
+$Primay: #11D469
+$Secundary: #0DA351
+$Background: #DBDBDB
+$Alert: #FEF102
+$Dark: #053D1E
+$Black: #000000
+$White: #FFFFFF
+    
+*
+    box-sizing: border-box
+    padding: 0
+    color: $White
+    // background-color: $Background
+
+.header
+    background-color: $Primay  
+    .nav
+        margin: auto
+        width: 100vw
+        max-width: 1024px
+        height: 10vh
+        background-color: $Primay
+        padding: 10px 5px
+        // text-align: center
+        .imgNav
+            img
+                width: 160px
+        .containerNav
+            margin-right: auto
+            margin-left: auto
+            padding-top: 0.8rem
+            ul
+                li
+                    float: left
+                    margin-right: 1.3rem
+                    list-style: none
+                    color: inherit
+                    padding: 2px 1rem
+                    border-radius: 0.5rem
+                    a
+                        font-family: 'Raleway', sans-serif
+                        font-weight: 700
+                        width: 100%
+                        font-size: 0.9rem
+                        // display: inline-block
+                        text-decoration: none 
+                    a:hover
+                        color: $White
+                        text-decoration: none
+                li:hover
+                    background-color: $Secundary
+                    transition: 0.5s
+                .li 
+                    background-color: $Secundary
+        .iconUserNav
+            font-size: 2rem
+            i
+                position: relative
+                right: 14px
+                bottom: 12px
+                margin-bottom: 0px
+                
+            .text
+                position: relative
+                font-family: 'Raleway', sans-serif
+                font-size: 0.65rem
+                font-weight: bold
+                margin-top: -20px
+                right: 25px
+                // margin-right: 2px
+.body
+    background-color: $Background
