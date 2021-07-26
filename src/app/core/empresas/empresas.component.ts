@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./empresas.component.sass']
 })
 export class EmpresasComponent implements OnInit {
-
+  addNewEmpresa:number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addEmpresa(){
+    this.addNewEmpresa = 1;
+  }
 }
