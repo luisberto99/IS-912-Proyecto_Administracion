@@ -1,7 +1,83 @@
-<!-- <div class="header">
-    <app-nav></app-nav>
-</div> -->
 
 <div class="body">
-    <p>empresas bienvenido!!</p>
+
+    <div class="box" *ngIf="addNewEmpresa == 0">
+
+        <h3>Empresas</h3>
+        <div class="contBtn">
+            <button type="button" (click) ="addEmpresa()" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+            </svg>  Agregar empresa</button>
+        </div>
+
+        <div class="contEmpresas">
+            <div class="name"><b>Nombre</b></div>
+            <div class="rtn"><b>RTN</b></div>
+            <div class="direccion"><b>Direccion</b></div>
+            <div class="logo"><b>Logo</b></div>
+            <div class="Telefono"><b>Telefono</b></div>
+        </div>
+
+        <div class="contEmpresas item">
+            <div class="name">Jestereo</div>
+            <div class="rtn">12334455555</div>
+            <div class="direccion">Mall multiplaza</div>
+            <div class="logoItem"><img src="assets/img/logo1.png"></div>
+            <div class="Telefono">223344455</div>
+        </div>
+
+        <div class="contEmpresas item">
+            <div class="name">Ford</div>
+            <div class="rtn">12334455555</div>
+            <div class="direccion">Col. Lorem Ipsum</div>
+            <div class="logoItem"><img src="assets/img/logo3.png"></div>
+            <div class="Telefono">223344455</div>
+        </div>
+
+        <div class="contEmpresas item">
+            <div class="name">Jestereo</div>
+            <div class="rtn">12334455555</div>
+            <div class="direccion">Mall multiplaza</div>
+            <div class="logoItem"><img src="assets/img/logo1.png"></div>
+            <div class="Telefono">223344455</div>
+        </div>
+
+    </div>
+    
+    <div class="formAdd" *ngIf="addNewEmpresa == 1">
+
+        <h3>Agregar empresa</h3>
+
+        <div class="group">
+            <input type="text"  required>
+            <label >Nombre</label>
+        </div>
+
+        <div class="group">
+            <input type="text" required>
+            <label >RTN</label>
+        </div>
+        
+        <div class="group">
+            <input type="text"  required>
+            <label >Direccion</label>
+        </div>
+        <div class="group">
+            <input type="text"  required>
+            <label >Descripcion</label>
+        </div>
+        <div class="group">
+            <input type="text"  required>
+            <label >Telefono</label>
+        </div>
+        
+        <div class="group">
+            <input type="File"  required>
+        </div>
+        <div class="btnGuardar">
+            <button type="submit">Guardar empresa</button>
+        </div>
+    
+    </div>
 </div>
+
