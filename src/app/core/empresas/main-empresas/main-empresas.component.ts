@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-empresas',
-  templateUrl: './empresas.component.html',
-  styleUrls: ['./empresas.component.sass']
+  selector: 'app-main-empresas',
+  templateUrl: './main-empresas.component.html',
+  styleUrls: ['./main-empresas.component.sass']
 })
-export class EmpresasComponent implements OnInit {
+export class MainEmpresasComponent implements OnInit {
   addNewEmpresa:number = 0;
   constructor() { }
 
