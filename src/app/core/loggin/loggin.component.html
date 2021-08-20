@@ -12,19 +12,22 @@
                 <img src="assets/img/sing-in-alt-solid-1.svg" alt="">
                 <div class="login_row">
                     <i class="fas fa-envelope login_icon"></i>
-                    <input id="#{label}" class="login_input mail w-100" type="mail" [(ngModel)]="user.email" required>
+                    <input id="#{label}" class="login_input mail w-100" type="mail" [formControl]="emailAdmin" required>
                     <label for="#{label}">Correo electonico</label>
                     <div class="bar"></div>
                 </div>
 
                 <div class="login_row">
                     <i class="fas fa-lock login_icon"></i>
-                    <input class="login_input pass w-100" type="password" [(ngModel)]="user.password"  required>
+                    <input class="login_input pass w-100" type="password" [formControl]="passwordAdmin" required>
                     <label for="#{label}">Contraseña</label>
                     <div class="bar"></div>
                 </div>
+                <p class="msjError" *ngIf="password?.status == 'INVALID' && (password?.touched || password?.dirty)">*La Contraseña debe tener al menos 1 digito, 1 letra mayuscula, 1 letra minuscula y 1 caracter especial</p>
+                <p class="msjError" *ngIf="email?.status == 'INVALID' && (email?.touched || email?.dirty)">**Correo electronico no valido.</p>
 
-                <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" (click)="login()">Ingresar</button>
+                <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" *ngIf="password?.status == 'INVALID' || email?.status == 'INVALID' "  (click)="redirectNow()">Ingresar</button>
+                <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" (click)="login()" *ngIf="password?.status == 'VALID' && email?.status == 'VALID' " >Ingresar</button>
             </div>
         </div>
     </div>
