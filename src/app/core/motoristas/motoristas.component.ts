@@ -18,11 +18,16 @@ export class MotoristasComponent implements OnInit {
 
     this.motoristasService.motoristasVerificados().subscribe(res =>{
       this.motoristas = res;
+      /* FUNCION ENCARGADA DE VERFICIAR SI EL USUARIO TIENE IMAGEN DE PERFIL
+      DE NO TENER, SE LE ASIGNARA UNA IMAGEN PARA DAR UNA VISTA PREVIA MEJOR Y
+      MOSTRAR QUE UN NO TIENE IAMGEN DE PERFIL.. */
+      this.actualizarImagenMotorista(this.motoristas);
       // console.log(this.motoristas);
     })
-
+    
     this.motoristasService.motoristasNoVerificados().subscribe(result =>{
       this.motoristasNoAprobados = result;
+      this.actualizarImagenMotorista(this.motoristasNoAprobados);
       // console.log(this.motoristasNoAprobados);
     })
   }
@@ -47,4 +52,12 @@ export class MotoristasComponent implements OnInit {
 
   }
 
+  actualizarImagenMotorista(data:Motorista[]){
+    for (let i = 0; i < data.length; i++) {
+      if(data[i].imagenPerfil == ""){
+        data[i].imagenPerfil = "/assets/img/user.png";
+      }
+      
+    }
+  }
 }
