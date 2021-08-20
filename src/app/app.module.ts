@@ -13,7 +13,7 @@ import { ProductosComponent } from './core/productos/productos.component';
 import { MotoristasComponent } from './core/motoristas/motoristas.component';
 import { OrdenesComponent } from './core/ordenes/ordenes.component';
 import { InfoAdminComponent } from './core/info-admin/info-admin.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { InfoAdminComponent } from './core/info-admin/info-admin.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
