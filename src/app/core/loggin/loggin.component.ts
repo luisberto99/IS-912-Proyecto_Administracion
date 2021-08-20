@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LogginComponent implements OnInit {
   //variable para controlar el acceso a rutas.
-  stateSesion:boolean = false;
+  // stateSesion:boolean = false;
 
   user:any = {
     email: '',
@@ -43,9 +43,18 @@ export class LogginComponent implements OnInit {
   }
   login(){
 
-    console.log(this.password?.value,this.email.value);
-    console.log(this.password?.status);
-        
+    this.loginService.loginAdmin({password: this.password?.value, email:this.email?.value}).subscribe(res =>{
+      // console.log(res);
+      if(res.result){
+        window.localStorage.setItem('user',res.id);
+        this.route.navigate(['/admin']);
+      }else{
+        this.password.reset();
+        this.email.reset();
+        this.route.navigate(['/']);
+      }
+      
+    });
 
     /* this.httpCliente.post('http://localhost:3000/login',{email:this.user.email, password:this.user.password}).subscribe(res =>{
       console.log(res);
@@ -62,4 +71,8 @@ export class LogginComponent implements OnInit {
     // }
   }
 
+  redirectNow(){
+    this.password.reset();
+    this.email.reset();
+  }
 }

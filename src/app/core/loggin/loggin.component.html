@@ -26,7 +26,7 @@
                 <p class="msjError" *ngIf="password?.status == 'INVALID' && (password?.touched || password?.dirty)">*La Contraseña debe tener al menos 1 digito, 1 letra mayuscula, 1 letra minuscula y 1 caracter especial</p>
                 <p class="msjError" *ngIf="email?.status == 'INVALID' && (email?.touched || email?.dirty)">**Correo electronico no valido.</p>
 
-                <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" *ngIf="password?.status == 'INVALID' || email?.status == 'INVALID' ">Ingresar</button>
+                <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" *ngIf="password?.status == 'INVALID' || email?.status == 'INVALID' "  (click)="redirectNow()">Ingresar</button>
                 <button class=" login_submit mt-3 w-100 rounded-3" type="submit" name="" (click)="login()" *ngIf="password?.status == 'VALID' && email?.status == 'VALID' " >Ingresar</button>
             </div>
         </div>
