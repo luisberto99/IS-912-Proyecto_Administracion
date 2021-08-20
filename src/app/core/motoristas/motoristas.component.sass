@@ -14,6 +14,51 @@ $White: #FFFFFF
     margin: auto
     width: 100vw
     max-width: 1024px
-    height: 90vh
+    height: auto
     background-color: $Background
     color: $White
+    .txtBiker
+        color: $Dark
+        margin-top: 2rem
+        font-weight: bold
+    .barra
+        width: 95%
+        margin-left: 2.5%
+        height: 1px
+        background-color: #b4afaf
+        margin-bottom: 1rem
+    .boxTable
+        // width: 90%
+        padding: 0 2rem
+        border-collapse: collapse
+        margin-top: 2rem
+        .contentTable
+            font-size: 1.3vw
+            text-align: center
+            box-shadow: 0 0 7px 0 rgb(0,0,0,0.3)
+            margin-bottom: 2rem
+            thead 
+                tr
+                    background-color: $Secundary
+                    color: white
+            td, th
+                padding: 0.3rem 2rem
+            tbody 
+                tr
+                    border-bottom: #dddddd 1px solid
+                    font-size: 1rem
+                    // fill: red
+                    color: $Dark
+                    td
+                        svg
+                            width: 25px
+                            height: 25px
+                        svg:hover
+                            fill: $Secundary
+                            cursor: pointer
+            tbody tr:nth-of-type(even)
+                background-color: #f3f3f3
+
+
+
+        
