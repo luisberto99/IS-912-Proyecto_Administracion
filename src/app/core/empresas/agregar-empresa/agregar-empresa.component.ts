@@ -38,7 +38,7 @@ export class AgregarEmpresaComponent implements OnInit {
     nombreComercialEmpresa: new FormControl('',[
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(15)
+      Validators.maxLength(30)
     ]),
     RTN: new FormControl('',[
       Validators.required,

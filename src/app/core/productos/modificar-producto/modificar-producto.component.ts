@@ -57,7 +57,7 @@ export class ModificarProductoComponent implements OnInit {
             nombreProducto: new FormControl(this.temEmpresa.productosEmpresa[0].nombreProducto,[
               Validators.required,
               Validators.minLength(3),
-              Validators.maxLength(15)
+              Validators.maxLength(30)
             ]),
             descripcion: new FormControl(this.temEmpresa.productosEmpresa[0].descripcion,[
               Validators.required,
@@ -87,7 +87,7 @@ export class ModificarProductoComponent implements OnInit {
     nombreProducto: new FormControl('',[
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(15)
+      Validators.maxLength(30)
     ]),
     descripcion: new FormControl('',[
       Validators.required,

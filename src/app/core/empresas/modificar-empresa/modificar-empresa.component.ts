@@ -32,7 +32,7 @@ empresa = new FormGroup({
     nombreComercialEmpresa: new FormControl('',[
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(15)
+      Validators.maxLength(30)
     ]),
     RTN: new FormControl('res.RTN',[
       Validators.required,
@@ -90,7 +90,7 @@ empresa = new FormGroup({
           nombreComercialEmpresa: new FormControl(res.nombreComercialEmpresa,[
             Validators.required,
             Validators.minLength(3),
-            Validators.maxLength(15)
+            Validators.maxLength(30)
           ]),
           RTN: new FormControl(res.RTN,[
             Validators.required,

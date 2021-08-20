@@ -42,7 +42,7 @@ export class AgregarProductoComponent implements OnInit {
     nombreProducto: new FormControl('',[
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(15)
+      Validators.maxLength(30)
     ]),
     descripcion: new FormControl('',[
       Validators.required,
