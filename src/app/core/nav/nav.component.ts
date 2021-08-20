@@ -18,4 +18,8 @@ export class NavComponent implements OnInit {
     this.opcionSeleccionada = num;
   }
   
+  cerrarSesion(){
+    
+    
+  }
 }
