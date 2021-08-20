@@ -1,8 +1,9 @@
+<h3>Empresas</h3>
+
 <p-table #dt [value]="empresas" [columns]="cols" [(selection)]="empresasSelect" dataKey="RTN" styleClass="p-datatable-empresas" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [paginator]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [filterDelay]="0" [globalFilterFields]="['nombreComercialEmpresa','RTN','estado']">
     <ng-template pTemplate="header" let-columns>
         <tr>
-            <th style="width: 3rem;"></th>
             <th style="width: 80px;">Logo
             </th>
             <th pSortableColumn="nombreComercialEmpresa">Nombre comercial
@@ -23,9 +24,6 @@
             <th style="width:4rem"></th>
         </tr>
         <tr>
-            <th>
-                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-            </th>
             <th>
                 <!--  LOGO-->
             </th>
@@ -65,10 +63,7 @@
     <ng-template pTemplate="body" let-empresa let-columns="columns">
         <tr>
             <td>
-                <p-tableCheckbox [value]="empresa"></p-tableCheckbox>
-            </td>
-            <td>
-                <img style="width: 60px; height: 60px;" src="/assets/empresas/mcdonalds-logo.jpg" alt="">
+                <img style="width: 60px; height: 60px;" [src]="empresa.logo" alt="">
             </td>
             <td>
                 <span class="p-column-title">Nombre comercial</span> {{ empresa.nombreComercialEmpresa }}
@@ -81,14 +76,14 @@
             </td>
 
             <td>
-                <span class="p-column-title">Telefono</span> {{empresa.telefonoEmpresa}}
+                <span class="p-column-title">Telefono</span> {{empresa.telefono}}
             </td>
             <td>
                 <span class="p-column-title">Estado</span>
-                <i class="pi" [ngClass]="{'true-icon pi-check-circle': empresa.estado, 'false-icon pi-times-circle': !empresa.estado}"></i>
+                <i class="pi" [ngClass]="{'true-icon pi-check-circle': empresa.estado == 'activo', 'false-icon pi-times-circle': empresa.estado == 'inactivo'}"></i> {{ empresa.estado }}
             </td>
             <td>
-                <a style="text-decoration: none;" pButton pRipple icon="pi pi-arrow-right" [routerLink]="['/empresa', empresa.RTN]"></a>
+                <a style="text-decoration: none;" pButton pRipple icon="pi pi-arrow-right" [routerLink]="['/admin/empresas', empresa._id]"></a>
             </td>
 
         </tr>

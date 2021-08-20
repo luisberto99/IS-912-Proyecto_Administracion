@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogginComponent } from './core/loggin/loggin.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavComponent } from './core/nav/nav.component';
 import { ProductosComponent } from './core/productos/productos.component';
 import { MotoristasComponent } from './core/motoristas/motoristas.component';
@@ -32,9 +32,19 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {DropdownModule} from 'primeng/dropdown';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {FileUploadModule} from 'primeng/fileupload';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 import { EmpresasService } from './core/empresas/empresas.service';
+import { AgregarEmpresaComponent } from './core/empresas/agregar-empresa/agregar-empresa.component';
+import { DetalleEmpresaComponent } from './core/empresas/detalle-empresa/detalle-empresa.component';
+import { ModificarEmpresaComponent } from './core/empresas/modificar-empresa/modificar-empresa.component';
+
+import { AgregarProductoComponent } from './core/productos/agregar-producto/agregar-producto.component';
+import { ModificarProductoComponent } from './core/productos/modificar-producto/modificar-producto.component';
+import { MainProductoComponent } from './core/productos/main-producto/main-producto.component';
+import { TableProductoComponent } from './core/productos/table-producto/table-producto.component';
 
 
 @NgModule({
@@ -47,7 +57,14 @@ import { EmpresasService } from './core/empresas/empresas.service';
     OrdenesComponent,
     MainEmpresasComponent,
     TableEmpresasComponent,
-    InfoAdminComponent
+    InfoAdminComponent,
+    AgregarEmpresaComponent,
+    DetalleEmpresaComponent,
+    ModificarEmpresaComponent,
+    MainProductoComponent,
+    AgregarProductoComponent,
+    ModificarProductoComponent,
+    TableProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +75,7 @@ import { EmpresasService } from './core/empresas/empresas.service';
     ButtonModule,
     ToastModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     TableModule,
@@ -71,9 +89,10 @@ import { EmpresasService } from './core/empresas/empresas.service';
     ToastModule,
     InputTextModule,
     ProgressBarModule,
-    FormsModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    FileUploadModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

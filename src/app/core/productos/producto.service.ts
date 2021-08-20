@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EmpresasService {
+export class ProductoService {
 
   private empresas:Empresa[] = [];
   private categorias:Categoria[] = [];
@@ -14,23 +14,26 @@ export class EmpresasService {
 
    }
 
-   /* AGREGAR UNA NUEVA EMPRESA */
-   addEmpresa(empresa:any,logo:string, banner:string):Observable<any>{
-    return this.httpClient.post<Empresa[]>('http://localhost:3000/empresas/',{empresa, logo, banner});
+
+   /* AGREGAR UN NUEVO PRODUCTO */
+   addProducto(producto:any ,img:string, banner:string):Observable<any>{
+    return this.httpClient.post<Producto[]>(`http://localhost:3000/empresas/:${producto.empresa}/productos`,{producto, img, banner});
    }
-  /* OBTENER UNA EMPRESA */
-   getEmpresas():Observable<Empresa[]>{
-      return this.httpClient.get<Empresa[]>('http://localhost:3000/empresas/');
+  /* OBTENER PRODUCTOS */
+   getProductos():Observable<Producto[]>{
+      return this.httpClient.get<Producto[]>('http://localhost:3000/productos/');
    }
 
-   /* MODIFICAR UNA EMPRESA */
-   modificarEmpresa(id:string, empresa:any,logo:string, banner:string):Observable<any>{
-    return this.httpClient.put<Empresa[]>('http://localhost:3000/empresas/'+id,{empresa, logo, banner});
+   /* MODIFICAR UN PRODUCTO */
+   modificarProducto(id:string, producto:any,img:string, banner:string):Observable<any>{
+    return this.httpClient.put<Producto[]>('http://localhost:3000/productos/'+id,{producto, img, banner});
    }
-  /* OBTENER UNA EMPRESA */
-   getEmpresa(id:String):Observable<Empresa>{
-    return this.httpClient.get<Empresa>('http://localhost:3000/empresas/'+id,{});
+
+  /* OBTENER UN PRODUCTO */
+   getProducto(id:String):Observable<Producto>{
+    return this.httpClient.get<Producto>('http://localhost:3000/productos/'+id,{});
    }
+
 
 } 
 

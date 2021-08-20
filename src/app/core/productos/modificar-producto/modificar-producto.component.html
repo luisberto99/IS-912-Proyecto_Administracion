@@ -1,0 +1,74 @@
+<div class="container">
+    <form [formGroup]="producto" class="formAdd">
+
+        <h3>Agregar producto</h3>
+
+        <div class="p-field p-col-12 mt-4">
+            <span class="p-float-label">
+                <span for="inputtext">Estado</span><br>
+            <select class="w-100" name="estado" formControlName="estado" id="">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+            <span class="error" *ngIf="!estado?.valid && (estado?.dirty || estado?.touched)">Estado no valido</span>
+            </span>
+        </div>
+
+        <div class="p-field p-col-12 mt-4">
+            <span class="p-float-label">
+                <span for="inputtext">Empresa</span><br>
+            <select class="w-100" name="estado" formControlName="empresa" id="">
+                    <option *ngFor="let empresa of empresas" [value]="empresa._id">{{ empresa.nombreComercialEmpresa }}</option>
+                </select>
+            <span class="error" *ngIf="!empresa?.valid && (empresa?.dirty || empresa?.touched)">Empresa no valida</span>
+            </span>
+        </div>
+
+        <div class="p-field p-col-12 mt-4">
+            <span class="p-float-label">
+                <input formControlName="nombreProducto" class="w-100" type="text" id="inputtext" pInputText required> 
+                <label for="inputtext">Nombre</label>
+                <span class="error" *ngIf="!nombreProducto?.valid && (nombreProducto?.dirty || nombreProducto?.touched)" >Nombre no valido</span>
+            </span>
+        </div>
+
+
+        <div class="p-field p-col-12 mt-4">
+            <span class="p-float-label">
+                <input formControlName="descripcion" class="w-100" type="text" id="inputtext" pInputText required> 
+                <label for="inputtext">Descripcion</label>
+                <span class="error" *ngIf="!descripcion?.valid && (descripcion?.dirty || descripcion?.touched)" >Descripcion no valida</span>
+            </span>
+        </div>
+
+        <div class="p-field p-col-12 mt-4">
+            <span class="p-float-label">
+                <input formControlName="precio" class="w-100" type="number" id="inputtext" pInputText required> 
+                <label for="inputtext">Precio</label>
+                <span class="error" *ngIf="!precio?.valid && (precio?.dirty || precio?.touched)" >precio no valido</span>
+            </span>
+        </div>
+
+        <div class="mt-4">
+            <p-fileUpload name="img" [auto]="true" chooseLabel="img" uploadLabel="Subir" cancelLabel="Cancelar" accept="image/*" [customUpload]="true" (onSelect)="imgsShow($event,'img')" (uploadHandler)="imgUpload()"></p-fileUpload>
+            <img class="imgPrev" *ngIf="imgUrl != ''" [src]="imgUrl" alt="nueva fotografia perfil">
+        </div>
+
+        <div class="mt-4">
+            <p-fileUpload name="banner" [auto]="true" chooseLabel="banner" uploadLabel="Subir" cancelLabel="Cancelar" accept="image/*" [customUpload]="true" (onSelect)="imgsShow($event,'banner')" (uploadHandler)="bannerUpload()"></p-fileUpload>
+            <img class="imgPrev" *ngIf="bannerUrl != ''" [src]="bannerUrl" alt="nueva fotografia perfil">
+        </div>
+
+        <div *ngIf="bannerUrl == ''" class="error">Seleccionar un banner</div>
+
+        <div class="btnGuardar">
+            <button (click)="guardar()" type="submit">Guardar empresa</button>
+        </div>
+
+
+    </form>
+</div>
+
+<p-dialog header="Producto modificado" [(visible)]="display" style="width: 50vw;">
+
+</p-dialog>

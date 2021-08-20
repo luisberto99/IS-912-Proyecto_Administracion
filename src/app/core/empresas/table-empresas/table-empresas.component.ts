@@ -22,7 +22,6 @@ export class TableEmpresasComponent implements OnInit {
   loading:boolean = true;
 
   cols:any[] = [
-    {field: 'check', head: ''},
     {field: 'nombreComercialEmpresa', head: 'Nombre Comercial'},
     {field: 'RTN', head: 'RTN'},
     {field: 'direccion', head: 'Tireccion'},
@@ -36,7 +35,16 @@ export class TableEmpresasComponent implements OnInit {
   constructor(private empresasService:EmpresasService, private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
-    this.empresas = this.empresasService.getEmpresas();
+    this.empresasService.getEmpresas().subscribe(
+       res => {
+         this.empresas = res;
+         console.log(this.empresas);
+         
+       },
+       error => {
+         console.log(error);
+       }
+    );
   console.log(this.empresas);
   
   this.primengConfig.ripple = true;
