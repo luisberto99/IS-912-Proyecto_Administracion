@@ -44,7 +44,7 @@ $White: #FFFFFF
                         font-family: 'Raleway', sans-serif
                         font-weight: 700
                         width: 100%
-                        font-size: 0.9rem
+                        font-size: 1.3vw
                         // display: inline-block
                         text-decoration: none 
                     a:hover
@@ -57,6 +57,18 @@ $White: #FFFFFF
                     background-color: $Secundary
         .iconUserNav
             font-size: 2rem
+            position: relative
+            width: 100px
+            // text-align: center
+            svg
+                margin-bottom: 20px
+                width: 30px
+                height: 30px
+                margin-left: 22px
+                // margin-right: 3rem
+                cursor: pointer
+            svg:hover
+                fill: $Background
             i
                 position: relative
                 right: 14px
@@ -64,12 +76,13 @@ $White: #FFFFFF
                 margin-bottom: 0px
                 
             .text
-                position: relative
+                position: absolute
                 font-family: 'Raleway', sans-serif
                 font-size: 0.65rem
                 font-weight: bold
                 margin-top: -20px
                 right: 25px
+            
                 // margin-right: 2px
 .body
     background-color: $Background
