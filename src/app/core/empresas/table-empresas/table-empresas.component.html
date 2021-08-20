@@ -21,6 +21,9 @@
             <th pSortableColumn="estado">Estado
                 <p-sortIcon field="estado"></p-sortIcon>
             </th>
+            <th pSortableColumn="calificacion">Calificacion
+                <p-sortIcon field="calificacion"></p-sortIcon>
+            </th>
             <th style="width:4rem"></th>
         </tr>
         <tr>
@@ -56,6 +59,17 @@
                 </p-columnFilter>
             </th>
             <th>
+                <p-columnFilter field="calificacion" matchMode="equals" [showMenu]="false">
+                    <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                        <p-dropdown [ngModel]="value" [options]="calificacion" (onChange)="filter($event.value)" placeholder="Any" [showClear]="true">
+                            <ng-template let-option pTemplate="item">
+                                <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+                            </ng-template>
+                        </p-dropdown>
+                    </ng-template>
+                </p-columnFilter>
+            </th>
+            <th>
 
             </th>
         </tr>
@@ -81,6 +95,9 @@
             <td>
                 <span class="p-column-title">Estado</span>
                 <i class="pi" [ngClass]="{'true-icon pi-check-circle': empresa.estado == 'activo', 'false-icon pi-times-circle': empresa.estado == 'inactivo'}"></i> {{ empresa.estado }}
+            </td>
+            <td>
+                <span class="p-column-title">Calificacion</span> {{empresa.calificacion}}
             </td>
             <td>
                 <a style="text-decoration: none;" pButton pRipple icon="pi pi-arrow-right" [routerLink]="['/admin/empresas', empresa._id]"></a>

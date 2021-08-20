@@ -6,7 +6,7 @@
         <div class="p-field p-col-12 mt-4">
             <span class="p-float-label">
                 <span for="inputtext">Estado</span><br>
-            <select class="w-100" name="estado" formControlName="estado" id="">
+            <select class="w-100" name="estado" required formControlName="estado" id="">
                     <option value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
                 </select>
@@ -51,6 +51,21 @@
                 <input formControlName="telefono" class="w-100" type="number" id="inputtext" pInputText required> 
                 <label for="inputtext">Telefono</label>
                 <span class="error" *ngIf="!telefono?.valid && (telefono?.dirty || telefono?.touched)" >Telefono no valido</span>
+            </span>
+        </div>
+
+        <div class="p-field p-col-12 mt-4">
+            <span class="p-float-label">
+                <span>Calificacion</span>
+            <select class="w-100" name="calificacion" required formControlName="calificacion" id="">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            <span class="error" *ngIf="!calificacion?.valid && (calificacion?.dirty || calificacion?.touched)">Calificacion no valido</span>
             </span>
         </div>
 

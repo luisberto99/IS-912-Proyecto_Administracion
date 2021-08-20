@@ -50,6 +50,11 @@ empresa = new FormGroup({
       Validators.minLength(8),
       Validators.maxLength(15)
     ]),
+    calificacion: new FormControl("0",[
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(1)
+    ]),
     estado: new FormControl("activo",[
       Validators.required
     ]),
@@ -103,6 +108,11 @@ empresa = new FormGroup({
             Validators.minLength(8),
             Validators.maxLength(15)
           ]),
+          calificacion: new FormControl(res.calificacion,[
+            Validators.required,
+            Validators.minLength(1),
+            Validators.maxLength(1)
+          ]),
           estado: new FormControl(res.estado,[
             Validators.required
           ]),
@@ -139,6 +149,9 @@ empresa = new FormGroup({
   }
   get estado(){
     return this.empresa.get('estado')
+  }
+  get calificacion(){
+    return this.empresa.get('calificacion')
   }
   
 

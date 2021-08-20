@@ -19,6 +19,15 @@ export class TableEmpresasComponent implements OnInit {
     {label:"Inactivo", value:0},
   ];
 
+  calificacion:any[] = [
+    {label: 0, value: 0},
+    {label: 1, value: 1},
+    {label: 2, value: 2},
+    {label: 3, value: 3},
+    {label: 4, value: 4},
+    {label: 5, value: 5}
+  ]
+
   loading:boolean = true;
 
   cols:any[] = [
@@ -27,6 +36,7 @@ export class TableEmpresasComponent implements OnInit {
     {field: 'direccion', head: 'Tireccion'},
     {field: 'telefono', head: 'Telefono'},
     {field: 'estado', head: 'Estado'},
+    {field: 'calificacion', head:'Calificacion'},
     {field: 'link', head: ''},
   ];
 
