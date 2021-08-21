@@ -10,10 +10,95 @@ $White: #FFFFFF
 *
     box-sizing: content-box
 
+
 .body
     margin: auto
     width: 100vw
     max-width: 1024px
-    height: 90vh
+    // height: 90vh
+    height: auto
     background-color: $Background
     color: $White
+    .txtOrders
+        color: $Dark
+        width: 100%
+        margin-top: 2rem
+        font-size: 1.6vw
+    .boxTable
+        // width: 90%
+        padding: 0 2rem
+        border-collapse: collapse
+        margin-top: 2rem
+        margin-left: 10%
+        .contentTable
+            font-size: 1.2vw
+            text-align: center
+            box-shadow: 5px 5px 6px 0px #00000049
+            margin-bottom: 2rem
+
+            thead 
+                tr
+                    background-color: $Secundary
+                    color: white
+                    border-bottom: #050505b0 1px solid
+            td, th
+                padding: 0.4rem 1.2rem
+            tbody 
+                tr
+                    border-bottom: #c7c2c242 1px solid
+                    font-size: 1rem
+                    background-color: $White
+                    // fill: red
+                    color: $Dark
+                    td
+                        img
+                            width: 60px
+                            border-radius: 50%
+                        svg
+                            width: 25px
+                            height: 25px
+                        svg:hover
+                            fill: $Secundary
+                            cursor: pointer
+                tr:hover
+                    background-color: #f3f3f3
+                    cursor: pointer
+            // tbody tr:nth-of-type(even)
+            //     background-color: #f3f3f3
+.btnExit
+    width: 30%
+    margin: 0
+    background-color: orange
+    color: $White
+    border: none
+    padding: 0.4rem 1rem
+.btnSelect
+    width: 30%
+    color: $White
+    background-color: $Primay
+    border: none
+    padding: 0.4rem 1rem   
+
+.barra
+    width: 90%
+    margin-left: 5%
+    height: 1px
+    background-color: #c2c0c0
+    margin-bottom: 2rem
+.contMotorist
+    position: relative
+    width: 100%
+    margin-bottom: 10px
+    cursor: pointer
+    img
+        // position: absolute
+        width: 10%
+        float: left
+        margin-left: 2%
+        margin-right: 2%
+        border-radius: 50%
+    p
+        margin-bottom: 3.3rem
+
+.contMotorist:hover
+    background-color: #f7f0f0

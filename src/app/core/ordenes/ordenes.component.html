@@ -1,5 +1,68 @@
 <div class="body">
-    <p>ordenes works!</p>
+    
+    <p class="txtOrders">Ordenes disponibles</p>
+    <div class="barra"></div>
+    <div class="boxTable">
+        <table class="contentTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Ubicacion entrega</th>
+                    <th>Empresa</th>
+                    <th>Total orden (L.)</th>
+                    <th>Asignar motorista</th>
+                </tr>
+    
+            </thead>
+            <tbody>
+                <tr *ngFor="let orden of ordenes">
+                    <td>{{ordenes.indexOf(orden)+1}}</td>
+                    <td>{{orden.nombreCliente}}</td>
+                    <td>{{orden.ubicacionEntrega}}</td>
+                    <td>{{orden.nombreEmpresaDistribuye}}</td>
+                    <td>{{orden.totalCostoOrden}}</td>
+                    <td><svg (click)="showDialog(orden._id)"  label="Show" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                      </svg> </td>
+                </tr>
+                   
+            </tbody>
+        </table>
+    </div>
 </div>
 
 
+<p-dialog [(visible)]="display" [modal]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}">
+    <ng-template pTemplate="header">
+        <b>Asignar motorista a Orden</b>
+    </ng-template>
+    <!-- <div class="barra"></div> -->
+        <div *ngFor="let motorista of motoristas">
+            <div class="contMotorist" (click)="selectMotorista(motorista._id,motorista.primerNombre,motorista.primerApellido)" >
+                <img src="{{motorista.imagenPerfil}}" alt="">
+                <p><b> {{motorista.primerNombre}}  {{motorista.primerApellido}}</b> </p>
+                <hr>
+            </div>    
+        </div>
+
+    <ng-template pTemplate="footer">
+        <button class="btnExit" (click)="showDialog()">Cerrar</button>
+        <button class="btnSelect" *ngIf="idMotoristaSeleccionado == ''" style="background-color: #38473f;" disabled>Seleccionar</button>
+        <button class="btnSelect"  (click)="asignarOrdenMotorista()" *ngIf="idMotoristaSeleccionado != ''">Seleccionar</button>
+    </ng-template>
+</p-dialog>
+<!-- 
+<h5>Modal</h5>
+<p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Show"></p-button>
+<p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <p class="p-m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog> -->
+<!-- <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Abrir modal</button> -->
