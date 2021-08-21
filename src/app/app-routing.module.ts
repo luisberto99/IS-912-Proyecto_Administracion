@@ -14,11 +14,13 @@ import { MainProductoComponent } from './core/productos/main-producto/main-produ
 import { AgregarProductoComponent } from './core/productos/agregar-producto/agregar-producto.component';
 import { ModificarProductoComponent } from './core/productos/modificar-producto/modificar-producto.component';
 import { TableProductoComponent } from './core/productos/table-producto/table-producto.component';
+import { DefaultGuard } from './guards/default.guard';
 
 //localhost:4200/welcome
 
 const routes: Routes = [
   {path: "admin", component: NavComponent,
+  canActivate:[DefaultGuard],
   children: [
     {path:'empresas', component: MainEmpresasComponent, children: [
       {path: "addEmpresa", component: AgregarEmpresaComponent},
@@ -34,7 +36,8 @@ const routes: Routes = [
     {path: 'ordenes', component: OrdenesComponent},
     {path: '', component: InfoAdminComponent, pathMatch: 'full'}
   ]},
-  {path: "", component:LogginComponent, pathMatch: "full"}
+  {path: "", component:LogginComponent, pathMatch: "full"},
+  {path:"**",redirectTo:""}
 ];
 
 
