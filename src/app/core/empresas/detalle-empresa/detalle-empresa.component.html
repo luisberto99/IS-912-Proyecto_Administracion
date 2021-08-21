@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="header d-flex align-items-center">
+        <div class="logo">
+            <img [src]="empresa.logo" alt="">
+        </div>
+        <div>
+            <h3>{{ empresa.nombreComercialEmpresa }}</h3>
+            <h4>{{ empresa.descripcion }}</h4>
+        </div>
+    </div>
+    <div class="banner">
+        <h4>Banner:</h4>
+        <img [src]="empresa.banner" alt="">
+    </div>
+    <div>
+        <h4>Estado:</h4>
+        <h5>{{ empresa.estado }}</h5>
+    </div>
+    <div>
+        <h4>Telefono:</h4>
+        <h5>{{ empresa.telefono }}</h5>
+    </div>
+    <div>
+        <h4>Categoiras:</h4>
+        <h5>{{ empresa.categorias }}</h5>
+    </div>
+    <div>
+        <h4>Calificacion:</h4>
+        <h5>{{ empresa.calificacion }}</h5>
+    </div>
+
+</div>
