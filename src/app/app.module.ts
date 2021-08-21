@@ -45,6 +45,8 @@ import { AgregarProductoComponent } from './core/productos/agregar-producto/agre
 import { ModificarProductoComponent } from './core/productos/modificar-producto/modificar-producto.component';
 import { MainProductoComponent } from './core/productos/main-producto/main-producto.component';
 import { TableProductoComponent } from './core/productos/table-producto/table-producto.component';
+import { NumeroDeOrdenesPorEmpresaComponent } from './core/info-admin/charts/numero-de-ordenes-por-empresa/numero-de-ordenes-por-empresa.component';
+import { NumeroDeOrdenesPorClienteComponent } from './core/info-admin/charts/numero-de-ordenes-por-cliente/numero-de-ordenes-por-cliente.component';
 
 
 @NgModule({
@@ -64,7 +66,9 @@ import { TableProductoComponent } from './core/productos/table-producto/table-pr
     MainProductoComponent,
     AgregarProductoComponent,
     ModificarProductoComponent,
-    TableProductoComponent
+    TableProductoComponent,
+    NumeroDeOrdenesPorEmpresaComponent,
+    NumeroDeOrdenesPorClienteComponent
   ],
   imports: [
     BrowserModule,
