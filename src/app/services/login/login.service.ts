@@ -5,10 +5,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
+  host = 'https://web-app-limalimon.azurewebsites.net/';
+
   constructor(private http:HttpClient) { }
 
   loginAdmin(data:any){
-    let url="http://localhost:3000/administracion/login";
+    let url= this.host + "administracion/login";
     return this.http.post<any>(url,data);
   }
 }

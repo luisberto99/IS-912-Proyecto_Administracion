@@ -6,28 +6,30 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MotoristasService {
 
+    host = 'https://web-app-limalimon.azurewebsites.net/';
+
   constructor(private http:HttpClient ) { }
 
   /* MOTORISTAS VERIFICADOS PARA PODER REALIZAR ENTREGAS. */
   motoristasVerificados(){
     
-    return this.http.get<any>("http://localhost:3000/motoristas/verificados");
+    return this.http.get<any>(this.host + "motoristas/verificados");
   }
   
   /* MOTORISTAS LOS CUALES NO HAN SIDO VERIFICADOS(APROBADOS). */
   motoristasNoVerificados(){
     
-    return this.http.get<any>("http://localhost:3000/motoristas/faltanVerificar");
+    return this.http.get<any>(this.host + "motoristas/faltanVerificar");
   }
 
   /* CAMBIAR ESTADO DE MOTORISTA A APROBADO. */
   aprobarMotorista(idMotorista:string,data:any){
-    let url=`http://localhost:3000/motoristas/${idMotorista}/verificar`;
+    let url=this.host + `motoristas/${idMotorista}/verificar`;
     return this.http.put(url,data);
   }
 
   obtenerDatosAdminAprueba(id:string){
-    let url = `http://localhost:3000/administracion/${id}/datos`;
+    let url = this.host + `administracion/${id}/datos`;
     return this.http.get<any>(url);
   }
 }

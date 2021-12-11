@@ -6,27 +6,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OrdenesService {
 
+  host = 'https://web-app-limalimon.azurewebsites.net/';
+
   constructor(private http:HttpClient) { }
 
-
-
-
-
   getOrdenesDisponibles(){
-    return this.http.get<any>("http://localhost:3000/ordenes/disponibles");
+    return this.http.get<any>(this.host + "ordenes/disponibles");
   }
 
   AsignarMotoristaOrden(data:any){
-    let url = "http://localhost:3000/ordenes/asignarMotorista";
+    let url = this.host + "ordenes/asignarMotorista";
     return this.http.put<any>(url,data);
   }
 
   obtenerMotoristasDisponibles(){
-    return this.http.get<any>("http://localhost:3000/motoristas/disponibles");
+    return this.http.get<any>(this.host + "motoristas/disponibles");
   }
 
   actualizarEstadoMotorista(data:any){
-    let url = "http://localhost:3000/motoristas/actualizarEstadoo"
+    let url = this.host + "motoristas/actualizarEstadoo"
     return this.http.put<any>(url,data);
   }
 
